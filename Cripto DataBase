@@ -1,0 +1,19 @@
+create database cripto --cria um banco de dados chamado cripto
+
+use cripto --diz ao banco que vai usar essa base de dados
+
+create table Usuarios(
+  UsuarioID int primary key identity,
+  Email varchar(100) unique not null.
+  Senha varchar(50) not null
+) 
+insert into Usuarios values ('caique.zaneti@sp.senai.br', 1234)
+
+select * from Usuarios
+
+select UsuarioId, Email, Hashbytes('MD2',Senha) as 'Senha Criptografada' from Usuarios where UsuarioID = 1
+select UsuarioId, Email, Hashbytes('MD4,Senha) as 'Senha Criptografada' from Usuarios where UsuarioID = 1
+select UsuarioId, Email, Hashbytes('MD5,Senha) as 'Senha Criptografada' from Usuarios where UsuarioID = 1
+select UsuarioId, Email, Hashbytes('SHA',senha) as 'Senha Criptografada' from Usuarios where UsuarioID = 1
+select UsuarioId, Email, Hashbytes('SHA2_256',Senha) as 'Senha Criptografada' from Usuarios where UsuarioID = 1
+select UsuarioId, Email, Hashbytes('SHA2_512',Senha) as 'Senha Criptografada' from Usuarios where UsuarioID = 1
